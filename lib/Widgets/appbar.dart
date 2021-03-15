@@ -67,7 +67,7 @@ class AppBarNav extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 14.0),
-      child: Text(
+      child: SelectableText(
         text,
         style: GoogleFonts.poppins(
           fontWeight: FontWeight.bold,

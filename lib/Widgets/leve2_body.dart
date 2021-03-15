@@ -78,7 +78,7 @@ class Level2Body extends StatelessWidget {
                                     const Icon(Icons.error),
                               ),
                             ),
-                            Text(
+                            SelectableText(
                               snapshot.data.docs[index]['projectName']
                                   .toString(),
                               style: GoogleFonts.poppins(
@@ -88,7 +88,7 @@ class Level2Body extends StatelessWidget {
                             ),
                             SizedBox(
                               width: 230,
-                              child: Text(
+                              child: SelectableText(
                                 snapshot.data.docs[index]['projectDesc']
                                     .toString(),
                                 style: GoogleFonts.poppins(
@@ -98,7 +98,7 @@ class Level2Body extends StatelessWidget {
                                       ? Colors.white54
                                       : Colors.black54,
                                 ),
-                                overflow: TextOverflow.ellipsis,
+                                //overflow: TextOverflow.ellipsis,
                                 maxLines: 4,
                                 textAlign: TextAlign.left,
                               ),

@@ -1,5 +1,5 @@
 name: portfolio
-description: A new Flutter project.
+description: Portfolio.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 1.0.0+3
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -31,11 +31,8 @@ dependencies:
   shared_preferences: ^2.0.4
   google_fonts:
   cached_network_image: ^2.5.1
-  font_awesome_flutter: ^8.12.0
   flutter_feather_icons: ^1.0.3
-  webscrollbar: ^0.0.2
   smooth_scroll_web: ^0.0.4
-  url_launcher: ^6.0.2
   vrouter: ^1.0.0-nullsafety.11
   cloud_firestore: ^1.0.1
   firebase_core: ^1.0.1

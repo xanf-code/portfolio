@@ -27,14 +27,14 @@ class Level1Body extends StatelessWidget {
                 "https://raw.githubusercontent.com/xanf-code/MyPortfolio/master/images/DarshanAswath.jpg",
               ),
             ),
-            Text(
+            SelectableText(
               _constants.name,
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
               ),
             ),
-            Text(
+            SelectableText(
               _constants.exp,
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class Level1Body extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            Text(
+            SelectableText(
               _constants.longBio,
               style: GoogleFonts.poppins(
                 fontSize: 15,
@@ -65,7 +65,7 @@ class Level1Body extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: Center(
-                  child: Text(
+                  child: SelectableText(
                     "CONNECT WITH ME",
                     style: GoogleFonts.poppins(
                       fontSize: 10,

@@ -17,13 +17,13 @@ class TextBody extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Row(
           children: [
-            Text(
+            SelectableText(
               text1,
               style: GoogleFonts.poppins(
                 fontSize: 18,
               ),
             ),
-            Text(
+            SelectableText(
               text2,
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.bold,

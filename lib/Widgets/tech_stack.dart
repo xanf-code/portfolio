@@ -86,7 +86,7 @@ class SkillSection extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             height: 38.0,
                             color: Colors.white,
-                            child: Text(
+                            child: SelectableText(
                               skill.skill,
                               style: GoogleFonts.poppins(
                                 color: _theme.darkTheme == true
@@ -112,7 +112,7 @@ class SkillSection extends StatelessWidget {
                         const SizedBox(
                           width: 10.0,
                         ),
-                        Text(
+                        SelectableText(
                           "${skill.percentage}%",
                           style: GoogleFonts.poppins(
                             fontSize: 16.0,

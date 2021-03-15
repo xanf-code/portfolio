@@ -73,6 +73,11 @@ class _MyAppState extends State<MyApp> {
                   delay: const Duration(milliseconds: 700),
                   child: IndividualPosts(),
                 ),
+                buildTransition: (animation1, _, child) => ScaleTransition(
+                  scale: animation1,
+                  child: child,
+                ),
+                transitionDuration: const Duration(milliseconds: 100),
                 name: 'projects',
                 aliases: ['/projects'],
               ),
