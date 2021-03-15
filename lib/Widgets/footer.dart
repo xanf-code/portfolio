@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:vrouter/vrouter.dart';
 
 class Footer extends StatelessWidget {
   @override
@@ -22,7 +23,11 @@ class Footer extends StatelessWidget {
                 FeatherIcons.linkedin,
                 size: 16,
               ),
-              onPressed: () {},
+              onPressed: () {
+                VRouterData.of(context).pushExternal(
+                    'https://www.linkedin.com/in/darshanaswath/',
+                    openNewTab: true);
+              },
             ),
             IconButton(
               splashRadius: 1,
@@ -31,7 +36,11 @@ class Footer extends StatelessWidget {
                 FeatherIcons.twitter,
                 size: 16,
               ),
-              onPressed: () {},
+              onPressed: () {
+                VRouterData.of(context).pushExternal(
+                    'https://twitter.com/iamlardBendtner',
+                    openNewTab: true);
+              },
             ),
             IconButton(
               splashRadius: 1,
@@ -40,7 +49,11 @@ class Footer extends StatelessWidget {
                 FeatherIcons.github,
                 size: 16,
               ),
-              onPressed: () {},
+              onPressed: () {
+                VRouterData.of(context).pushExternal(
+                    'https://github.com/xanf-code',
+                    openNewTab: true);
+              },
             ),
           ],
         ),

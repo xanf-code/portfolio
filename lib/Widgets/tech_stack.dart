@@ -18,7 +18,7 @@ List<Skill> skills = [
     percentage: 70,
   ),
   Skill(
-    skill: "PHP",
+    skill: "Swift",
     percentage: 40,
   ),
   Skill(
@@ -26,12 +26,16 @@ List<Skill> skills = [
     percentage: 60,
   ),
   Skill(
+    skill: "Kotlin",
+    percentage: 40,
+  ),
+  Skill(
     skill: "Deno",
     percentage: 50,
   ),
   Skill(
     skill: "GoLang",
-    percentage: 40,
+    percentage: 45,
   ),
 ];
 

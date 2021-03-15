@@ -1,9 +1,13 @@
 import 'package:fancy_cursor/fancy_cursor.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/Home/contact_page.dart';
 import 'package:portfolio/Home/home.dart';
+import 'package:portfolio/Home/individual.dart';
+import 'package:portfolio/Home/playlist.dart';
 import 'package:portfolio/ThemeData/dark_theme_styles.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:vrouter/vrouter.dart';
 import 'ModelClass/theme_provider.dart';
 
 // ignore: must_be_immutable
@@ -34,7 +38,7 @@ class _MyAppState extends State<MyApp> {
       },
       child: Consumer<DarkThemeProvider>(
         builder: (BuildContext context, value, Widget child) {
-          return MaterialApp(
+          return VRouter(
             theme: Styles.themeData(themeChangeProvider.darkTheme, context),
             debugShowCheckedModeBanner: false,
             builder: (context, widget) => ResponsiveWrapper.builder(
@@ -51,13 +55,49 @@ class _MyAppState extends State<MyApp> {
                 color: const Color(0xFFF5F5F5),
               ),
             ),
-            home: FancyCursor(
-              size: 12,
-              color:
-                  themeChangeProvider.darkTheme ? Colors.white : Colors.black,
-              delay: const Duration(milliseconds: 700),
-              child: HomePage(),
-            ),
+            routes: [
+              VStacked(
+                path: '/',
+                widget: FancyCursor(
+                  size: 12,
+                  color: Colors.yellow,
+                  delay: const Duration(milliseconds: 700),
+                  child: HomePage(),
+                ),
+              ),
+              VStacked(
+                path: '/project/:id/:title',
+                widget: FancyCursor(
+                  size: 12,
+                  color: Colors.yellow,
+                  delay: const Duration(milliseconds: 700),
+                  child: IndividualPosts(),
+                ),
+                name: 'projects',
+                aliases: ['/projects'],
+              ),
+              VStacked(
+                path: '/contact',
+                widget: FancyCursor(
+                  size: 12,
+                  color: Colors.yellow,
+                  delay: const Duration(milliseconds: 700),
+                  child: ContactPage(),
+                ),
+                name: 'contact',
+              ),
+              VStacked(
+                path: '/playlist',
+                widget: FancyCursor(
+                  size: 12,
+                  color: Colors.yellow,
+                  delay: const Duration(milliseconds: 700),
+                  child: PlayListPage(),
+                ),
+                name: 'playlist',
+              ),
+              VRouteRedirector(path: ':_(.*)', redirectTo: '/'),
+            ],
           );
         },
       ),

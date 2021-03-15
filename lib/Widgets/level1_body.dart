@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/ModelClass/theme_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:vrouter/vrouter.dart';
 import '../constants.dart';
 
 class Level1Body extends StatelessWidget {
@@ -50,21 +51,29 @@ class Level1Body extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            Container(
-              height: 45,
-              width: 160,
-              decoration: BoxDecoration(
-                color: _theme.darkTheme == true ? Colors.white : Colors.black,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: Center(
-                child: Text(
-                  "CONNECT WITH ME",
-                  style: GoogleFonts.poppins(
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                    color:
-                        _theme.darkTheme == true ? Colors.black : Colors.white,
+            GestureDetector(
+              onTap: () {
+                VRouterData.of(context).pushNamed(
+                  'contact',
+                );
+              },
+              child: Container(
+                height: 45,
+                width: 160,
+                decoration: BoxDecoration(
+                  color: _theme.darkTheme == true ? Colors.white : Colors.black,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Center(
+                  child: Text(
+                    "CONNECT WITH ME",
+                    style: GoogleFonts.poppins(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: _theme.darkTheme == true
+                          ? Colors.black
+                          : Colors.white,
+                    ),
                   ),
                 ),
               ),

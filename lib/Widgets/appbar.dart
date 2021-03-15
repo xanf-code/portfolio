@@ -1,9 +1,17 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/ModelClass/theme_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:vrouter/vrouter.dart';
 
-class AppBarWidget extends StatelessWidget {
+class AppBarWidget extends StatefulWidget {
+  @override
+  _AppBarWidgetState createState() => _AppBarWidgetState();
+}
+
+class _AppBarWidgetState extends State<AppBarWidget> {
   @override
   Widget build(BuildContext context) {
     final themeChange = Provider.of<DarkThemeProvider>(context);
@@ -13,28 +21,34 @@ class AppBarWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Placeholder(
-            fallbackWidth: 50,
-          ),
-          Row(
-            children: [
-              GestureDetector(
-                onTap: () => debugPrint("sadsa"),
-                child: const AppBarNav(
-                  text: "Home",
+          Container(),
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    VRouterData.of(context).pushNamed(
+                      'playlist',
+                    );
+                  },
+                  child: const AppBarNav(
+                    text: "Playlists",
+                  ),
                 ),
-              ),
-              const AppBarNav(
-                text: "Playlists",
-              ),
-              //TO-DO THEME MANAGEMENT
-              Checkbox(
-                value: themeChange.darkTheme,
-                onChanged: (bool value) {
-                  themeChange.darkTheme = value;
-                },
-              ),
-            ],
+                SizedBox(
+                  width: 60,
+                  child: DayNightSwitcher(
+                    isDarkModeEnabled: themeChange.darkTheme,
+                    onStateChanged: (isDarkModeEnabled) {
+                      setState(() {
+                        themeChange.darkTheme = isDarkModeEnabled;
+                      });
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

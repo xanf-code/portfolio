@@ -27,22 +27,24 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _getChild() {
-    return ListView(
+    return SingleChildScrollView(
       controller: _scrollController,
-      children: [
-        AppBarWidget(),
-        Level1Body(),
-        SkillSection(),
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0),
-          child: TextBody(
-            text1: "My ",
-            text2: "Projects 💻 🖊️",
+      child: Column(
+        children: [
+          AppBarWidget(),
+          Level1Body(),
+          SkillSection(),
+          const Padding(
+            padding: EdgeInsets.only(left: 20.0),
+            child: TextBody(
+              text1: "My ",
+              text2: "Projects 💻 🖊️",
+            ),
           ),
-        ),
-        Level2Body(),
-        Footer(),
-      ],
+          Level2Body(),
+          Footer(),
+        ],
+      ),
     );
   }
 }

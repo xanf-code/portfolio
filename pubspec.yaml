@@ -36,6 +36,10 @@ dependencies:
   webscrollbar: ^0.0.2
   smooth_scroll_web: ^0.0.4
   url_launcher: ^6.0.2
+  vrouter: ^1.0.0-nullsafety.11
+  cloud_firestore: ^1.0.1
+  firebase_core: ^1.0.1
+  day_night_switcher: ^0.2.0+1
 
 dev_dependencies:
   flutter_test:
