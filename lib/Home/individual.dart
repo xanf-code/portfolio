@@ -152,7 +152,6 @@ class UpperWidget extends StatelessWidget {
               SelectableText(
                 project['timestamp'].toString(),
                 style: GoogleFonts.dmSans(
-                  color: Colors.white,
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),

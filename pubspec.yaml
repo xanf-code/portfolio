@@ -37,6 +37,9 @@ dependencies:
   cloud_firestore: ^1.0.1
   firebase_core: ^1.0.1
   day_night_switcher: ^0.2.0+1
+  delayed_display: ^1.1.0
+  url_launcher: ^6.0.2
+  percent_indicator: ^2.1.9+1
 
 dev_dependencies:
   flutter_test:

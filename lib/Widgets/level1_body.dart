@@ -13,73 +13,68 @@ class Level1Body extends StatelessWidget {
     final double height = MediaQuery.of(context).size.height;
     final Constants _constants = Constants();
 
-    return Padding(
-      padding: const EdgeInsets.only(top: 16.0),
-      // ignore: sized_box_for_whitespace
-      child: Container(
-        height: height * 0.67,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const CircleAvatar(
-              radius: 50,
-              backgroundImage: CachedNetworkImageProvider(
-                "https://raw.githubusercontent.com/xanf-code/MyPortfolio/master/images/DarshanAswath.jpg",
-              ),
+    return Container(
+      height: height * 0.67,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          const CircleAvatar(
+            radius: 50,
+            backgroundImage: CachedNetworkImageProvider(
+              "https://raw.githubusercontent.com/xanf-code/MyPortfolio/master/images/DarshanAswath.jpg",
             ),
-            SelectableText(
-              _constants.name,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-              ),
+          ),
+          SelectableText(
+            _constants.name,
+            style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w600,
+              fontSize: 16,
             ),
-            SelectableText(
-              _constants.exp,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                height: 1.2,
-              ),
-              textAlign: TextAlign.center,
+          ),
+          SelectableText(
+            _constants.exp,
+            style: GoogleFonts.poppins(
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+              height: 1.2,
             ),
-            SelectableText(
-              _constants.longBio,
-              style: GoogleFonts.poppins(
-                fontSize: 15,
-                fontWeight: FontWeight.w300,
-              ),
-              textAlign: TextAlign.center,
+            textAlign: TextAlign.center,
+          ),
+          SelectableText(
+            _constants.longBio,
+            style: GoogleFonts.poppins(
+              fontSize: 15,
+              fontWeight: FontWeight.w300,
             ),
-            GestureDetector(
-              onTap: () {
-                VRouterData.of(context).pushNamed(
-                  'contact',
-                );
-              },
-              child: Container(
-                height: 45,
-                width: 160,
-                decoration: BoxDecoration(
-                  color: _theme.darkTheme == true ? Colors.white : Colors.black,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Center(
-                  child: SelectableText(
-                    "CONNECT WITH ME",
-                    style: GoogleFonts.poppins(
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                      color: _theme.darkTheme == true
-                          ? Colors.black
-                          : Colors.white,
-                    ),
+            textAlign: TextAlign.center,
+          ),
+          GestureDetector(
+            onTap: () {
+              VRouterData.of(context).pushNamed(
+                'contact',
+              );
+            },
+            child: Container(
+              height: 45,
+              width: 160,
+              decoration: BoxDecoration(
+                color: _theme.darkTheme == true ? Colors.white : Colors.black,
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Center(
+                child: SelectableText(
+                  "CONNECT WITH ME",
+                  style: GoogleFonts.poppins(
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                    color:
+                        _theme.darkTheme == true ? Colors.black : Colors.white,
                   ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

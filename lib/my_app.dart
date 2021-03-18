@@ -1,5 +1,6 @@
 import 'package:fancy_cursor/fancy_cursor.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/Home/certification.dart';
 import 'package:portfolio/Home/contact_page.dart';
 import 'package:portfolio/Home/home.dart';
 import 'package:portfolio/Home/individual.dart';
@@ -100,6 +101,16 @@ class _MyAppState extends State<MyApp> {
                   child: PlayListPage(),
                 ),
                 name: 'playlist',
+              ),
+              VStacked(
+                path: '/certificates',
+                widget: FancyCursor(
+                  size: 12,
+                  color: Colors.yellow,
+                  delay: const Duration(milliseconds: 700),
+                  child: Certification(),
+                ),
+                name: 'certificates',
               ),
               VRouteRedirector(path: ':_(.*)', redirectTo: '/'),
             ],
